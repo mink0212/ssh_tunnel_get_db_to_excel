@@ -21,7 +21,7 @@ def main():
 
         if mode != 'LOCAL':
             ssh = SshAccess(ssh_config)
-            ssh.start()
+            ssh.ssh_start()
 
         exec_sql_edit_excel(excel, db)
         excel.save('../excel/output.xlsx')
@@ -32,6 +32,9 @@ def main():
 
         if db is not None:
             db.close()
+
+        if ssh is not None:
+            ssh.ssh_close()
 
 def exec_sql_edit_excel(excel, db):
     now_datetime = datetime.now()
