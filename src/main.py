@@ -11,6 +11,9 @@ from py_module.file.excel_access import ExcelAccess
 from py_module.ssh.ssh_access import SshAccess
 
 def main():
+    ssh = None
+    excel = None
+    db = None
     mode = input_check()
 
     try:
